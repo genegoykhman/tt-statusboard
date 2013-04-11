@@ -76,7 +76,7 @@ Public Class frmMain
 
 		Dim listResults As New Dictionary(Of String, String)
 		GenerateTimeReport(tt, sessionID, sFrom, sTo, entityLookup, listResults)
-		SaveResultsAsJSON(listResults, txtDestinationFolder.Text + "\" + sDays + "-" + entityType.ToLower() + ".json", IIf(sDays = "0-Day", "Today's", sDays) + " time by " + entityType)
+		SaveResultsAsJSON(listResults, txtDestinationFolder.Text + "\" + sDays + "-" + entityType.ToLower() + ".json", IIf(sDays = "0-day", "Today's", sDays) + " time by " + entityType)
 	End Sub
 
 	Private Sub SaveResultsAsJSON(ByRef listResults As Dictionary(Of String, String), ByRef outputFileName As String, ByRef reportTitle As String)
