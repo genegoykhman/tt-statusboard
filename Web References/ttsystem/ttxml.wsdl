@@ -1,0 +1,1652 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.timetiger.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://www.timetiger.com/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.timetiger.com/">
+      <s:complexType name="ArrayOfStringPair">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="StringPair" nillable="true" type="tns:StringPair" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="StringPair">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfStringID">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="StringID" nillable="true" type="tns:StringID" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="StringID">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDefaultPick">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DefaultPick" nillable="true" type="tns:DefaultPick" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DefaultPick">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="EntityID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Type" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfLanguageCaption">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="LanguageCaption" nillable="true" type="tns:LanguageCaption" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LanguageCaption">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="LanguageID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCustomFieldCaption">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CustomFieldCaption" nillable="true" type="tns:CustomFieldCaption" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CustomFieldCaption">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="LanguageID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FieldName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEntityTypeCaption">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EntityTypeCaption" nillable="true" type="tns:EntityTypeCaption" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EntityTypeCaption">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="LanguageID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescriptionPlural" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EntityType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SystemRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Image" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GlobalUnique" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Seq" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillingPolicySeq" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DefaultRoleID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EntityTypeCaptions" type="tns:ArrayOfEntityTypeCaption" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEntityType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EntityType" nillable="true" type="tns:EntityType" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EntityNode">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EntityName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EntityTypeID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EntityTypeName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ParentEntityID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ChildCount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ChildNodes" type="tns:ArrayOfEntityNode" />
+          <s:element minOccurs="0" maxOccurs="1" name="Hidden" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEntityNode">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EntityNode" nillable="true" type="tns:EntityNode" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTimeLog">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TimeLog" nillable="true" type="tns:TimeLog" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TimeLog">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RowID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CellID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Duration" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExportedOn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LogCost" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LogValue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LogSeq" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PortionComplete" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApprovalStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EnteredBy" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExportedBy" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeclinedBy" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeclinedReason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TimeStarted" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TimeStopped" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Custom1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Custom2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Custom3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Allocation" type="tns:ArrayOfAllocationEntry" />
+          <s:element minOccurs="0" maxOccurs="1" name="AggregatedLogs" type="tns:ArrayOfStringID" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAllocationEntry">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AllocationEntry" nillable="true" type="tns:AllocationEntry" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AllocationEntry">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="EntityTypeID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EntityID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCustomField">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CustomField" nillable="true" type="tns:CustomField" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CustomField">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomFieldGroupID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Seq" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Restricted" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Visible" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ValueType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ValueEntityTypeID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ValueListID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DefaultValue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LinkType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LinkField" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AggregateType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AggregateWeightFieldID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ValidationRules" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="System" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SystemRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomFieldCaptions" type="tns:ArrayOfCustomFieldCaption" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EntityMetrics">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AsOf" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TotalSecs" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ChildCount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstLogOn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastLogOn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CompleteSecs" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlannedSecs" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EstimatedSecs" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EstimatedStartOn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EstimatedEndOn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EstimatedCost" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PercentComplete" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlannedPercentComplete" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EarnedValue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlannedValue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CPI" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SPI" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PercentUnderBudget" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PercentAheadSchedule" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ForecastedCost" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ForecastedCompleteOn" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ToDo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreatedBy" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreatedOn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MarkAsNew" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Priority" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BeginOn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DueOn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Seq" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NothingToDo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StoredSecs" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AlarmType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SecsCountdownFrom" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SecsStartAt" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SecsStopAt" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OnSince" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Notes" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WorkInProgress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Allocation" type="tns:ArrayOfAllocationEntry" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfToDo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ToDo" nillable="true" type="tns:ToDo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RoleType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Flags" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FilterType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FilterIncludes" type="tns:ArrayOfStringID" />
+          <s:element minOccurs="0" maxOccurs="1" name="System" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SystemRef" type="s:string" />
+          <s:element minOccurs="0" name="LanguageCaptions" type="tns:ArrayOfLanguageCaption" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfRoleType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RoleType" nillable="true" type="tns:RoleType" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddToDoWorkInProgress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDoID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="WorkInProgress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Append" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddToDoWorkInProgressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddToDoWorkInProgressResult" type="tns:AddToDoWorkInProgressOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AddToDoWorkInProgressOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ResultCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CopyEntity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EntityID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToParentEntityID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EntityName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CopyEntityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CopyEntityResult" type="tns:CopyEntityOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CopyEntityOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ResultCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NewEntityID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NewEntityName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateAssignment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromEntityID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToEntityID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RoleTypeID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateAssignmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateAssignmentResult" type="tns:CreateAssignmentOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CreateAssignmentOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ResultCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateEntity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EntityTypeID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ParentEntityID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EntityName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomFieldValues" type="tns:ArrayOfStringPair" />
+            <s:element minOccurs="0" maxOccurs="1" name="DefaultPicks" type="tns:ArrayOfDefaultPick" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateEntityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateEntityResult" type="tns:CreateEntityOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CreateEntityOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ResultCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EntityID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DeleteEntity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EntityID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ForceDeleteChildren" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ForceDeleteLogs" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteEntityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteEntityResult" type="tns:DeleteEntityOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DeleteEntityOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ResultCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DeleteTimeLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TimeLogID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteTimeLogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteTimeLogResult" type="tns:DeleteTimeLogOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DeleteTimeLogOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ResultCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DeleteTimeLogsForDay">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LogDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Allocation" type="tns:ArrayOfStringPair" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteTimeLogsForDayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteTimeLogsForDayResult" type="tns:DeleteTimeLogsForDayOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DeleteTimeLogsForDayOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ResultCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RemainingSecsForDay" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DeleteToDo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDoID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EvenWhenUnlogged" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteToDoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteToDoResult" type="tns:DeleteToDoOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DeleteToDoOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ResultCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="FindEntitiesByName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NameStartsWith" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EntityTypeID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ParentEntityID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecurseIntoChildren" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindEntitiesByNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FindEntitiesByNameResult" type="tns:FindEntitiesByNameOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FindEntitiesByNameOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ResultCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EntityNodes" type="tns:ArrayOfEntityNode" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAllEntities">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ShowHidden" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PermissionFilter" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllEntitiesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllEntitiesResult" type="tns:GetAllEntitiesOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetAllEntitiesOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ResultCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EntityNodes" type="tns:ArrayOfEntityNode" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCustomFieldValue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomFieldID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EntityID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCustomFieldValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCustomFieldValueResult" type="tns:GetCustomFieldValueOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetCustomFieldValueOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ResultCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FieldValue" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetEntities">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ParentEntityID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ShowSubChildren" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ShowHidden" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PermissionFilter" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEntitiesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEntitiesResult" type="tns:GetEntitiesOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetEntitiesOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ResultCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EntityNodes" type="tns:ArrayOfEntityNode" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetEntity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EntityID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ShowSubChildren" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEntityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEntityResult" type="tns:GetEntityOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetEntityOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ResultCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EntityNode" type="tns:EntityNode" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetEntityCustomFieldList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EntityTypeID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEntityCustomFieldListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEntityCustomFieldListResult" type="tns:GetEntityCustomFieldListOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetEntityCustomFieldListOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ResultCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomFields" type="tns:ArrayOfCustomField" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetEntityMetrics">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EntityID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AsOf" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEntityMetricsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEntityMetricsResult" type="tns:GetEntityMetricsOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetEntityMetricsOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ResultCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EntityMetrics" type="tns:EntityMetrics" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetEntityTypeList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BottomTypesOnly" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEntityTypeListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEntityTypeListResult" type="tns:GetEntityTypeListOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetEntityTypeListOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ResultCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EntityTypes" type="tns:ArrayOfEntityType" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetRoleTypeList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRoleTypeListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRoleTypeListResult" type="tns:GetRoleTypeListOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetRoleTypeListOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ResultCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RoleTypes" type="tns:ArrayOfRoleType" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTimeLogBilled">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TimeLogID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTimeLogBilledResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTimeLogBilledResult" type="tns:GetTimeLogBilledOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetTimeLogBilledOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ResultCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BilledOn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BilledBy" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTimeLogs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SubjectID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApprovalFilter" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MarkAsBilled" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AdditionalExportType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTimeLogsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTimeLogsResult" type="tns:GetTimeLogsOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetTimeLogsOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ResultCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TimeLogs" type="tns:ArrayOfTimeLog" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExportFileURL" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetToDoList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetToDoListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetToDoListResult" type="tns:GetToDoListOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetToDoListOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ResultCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ToDos" type="tns:ArrayOfToDo" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetValidChildTypes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SubjectID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetValidChildTypesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetValidChildTypesResult" type="tns:GetValidChildTypesOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetValidChildTypesOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ResultCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EntityTypes" type="tns:ArrayOfStringPair" />
+          <s:element minOccurs="0" maxOccurs="1" name="CanAdd" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Goodbye">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GoodbyeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GoodbyeResult" type="tns:GoodbyeOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GoodbyeOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ResultCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Hello">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIVersion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PreferredLanguage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HelloResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloResult" type="tns:HelloOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="HelloOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ResultCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LanguageCode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LoginStandard">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginStandardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginStandardResult" type="tns:LoginStandardOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="LoginStandardOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ResultCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LoginWindows">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginWindowsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginWindowsResult" type="tns:LoginWindowsOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="LoginWindowsOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ResultCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveTimeLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TimeLogID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LogDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LogSeconds" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StatusDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Allocation" type="tns:ArrayOfStringPair" />
+            <s:element minOccurs="0" maxOccurs="1" name="PortionComplete" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Custom1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Custom2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Custom3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MergeForDay" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveTimeLogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveTimeLogResult" type="tns:SaveTimeLogOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SaveTimeLogOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ResultCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TimeLogID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TotalSecsForDay" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveToDo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDoID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Seq" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Notes" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Allocation" type="tns:ArrayOfStringPair" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveToDoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveToDoResult" type="tns:SaveToDoOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SaveToDoOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ResultCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ToDoID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SelectToDo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDoID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectToDoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectToDoResult" type="tns:SelectToDoOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SelectToDoOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ResultCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SetCustomFieldValue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomFieldID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EntityID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FieldValue" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetCustomFieldValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetCustomFieldValueResult" type="tns:SetCustomFieldValueOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SetCustomFieldValueOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ResultCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SetPasswordByUserName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClearTextPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetPasswordByUserNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetPasswordByUserNameResult" type="tns:SetPasswordByUserNameOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SetPasswordByUserNameOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ResultCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SetTimeLogBilled">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TimeLogID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Billed" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetTimeLogBilledResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetTimeLogBilledResult" type="tns:SetTimeLogBilledOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SetTimeLogBilledOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ResultCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SetToDoSecs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDoID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Seconds" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetToDoSecsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetToDoSecsResult" type="tns:SetToDoSecsOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SetToDoSecsOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ResultCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Touch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TouchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TouchResult" type="tns:TouchOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TouchOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ResultCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </types>
+  <message name="AddToDoWorkInProgressSoapIn">
+    <part name="parameters" element="tns:AddToDoWorkInProgress" />
+  </message>
+  <message name="AddToDoWorkInProgressSoapOut">
+    <part name="parameters" element="tns:AddToDoWorkInProgressResponse" />
+  </message>
+  <message name="CopyEntitySoapIn">
+    <part name="parameters" element="tns:CopyEntity" />
+  </message>
+  <message name="CopyEntitySoapOut">
+    <part name="parameters" element="tns:CopyEntityResponse" />
+  </message>
+  <message name="CreateAssignmentSoapIn">
+    <part name="parameters" element="tns:CreateAssignment" />
+  </message>
+  <message name="CreateAssignmentSoapOut">
+    <part name="parameters" element="tns:CreateAssignmentResponse" />
+  </message>
+  <message name="CreateEntitySoapIn">
+    <part name="parameters" element="tns:CreateEntity" />
+  </message>
+  <message name="CreateEntitySoapOut">
+    <part name="parameters" element="tns:CreateEntityResponse" />
+  </message>
+  <message name="DeleteEntitySoapIn">
+    <part name="parameters" element="tns:DeleteEntity" />
+  </message>
+  <message name="DeleteEntitySoapOut">
+    <part name="parameters" element="tns:DeleteEntityResponse" />
+  </message>
+  <message name="DeleteTimeLogSoapIn">
+    <part name="parameters" element="tns:DeleteTimeLog" />
+  </message>
+  <message name="DeleteTimeLogSoapOut">
+    <part name="parameters" element="tns:DeleteTimeLogResponse" />
+  </message>
+  <message name="DeleteTimeLogsForDaySoapIn">
+    <part name="parameters" element="tns:DeleteTimeLogsForDay" />
+  </message>
+  <message name="DeleteTimeLogsForDaySoapOut">
+    <part name="parameters" element="tns:DeleteTimeLogsForDayResponse" />
+  </message>
+  <message name="DeleteToDoSoapIn">
+    <part name="parameters" element="tns:DeleteToDo" />
+  </message>
+  <message name="DeleteToDoSoapOut">
+    <part name="parameters" element="tns:DeleteToDoResponse" />
+  </message>
+  <message name="FindEntitiesByNameSoapIn">
+    <part name="parameters" element="tns:FindEntitiesByName" />
+  </message>
+  <message name="FindEntitiesByNameSoapOut">
+    <part name="parameters" element="tns:FindEntitiesByNameResponse" />
+  </message>
+  <message name="GetAllEntitiesSoapIn">
+    <part name="parameters" element="tns:GetAllEntities" />
+  </message>
+  <message name="GetAllEntitiesSoapOut">
+    <part name="parameters" element="tns:GetAllEntitiesResponse" />
+  </message>
+  <message name="GetCustomFieldValueSoapIn">
+    <part name="parameters" element="tns:GetCustomFieldValue" />
+  </message>
+  <message name="GetCustomFieldValueSoapOut">
+    <part name="parameters" element="tns:GetCustomFieldValueResponse" />
+  </message>
+  <message name="GetEntitiesSoapIn">
+    <part name="parameters" element="tns:GetEntities" />
+  </message>
+  <message name="GetEntitiesSoapOut">
+    <part name="parameters" element="tns:GetEntitiesResponse" />
+  </message>
+  <message name="GetEntitySoapIn">
+    <part name="parameters" element="tns:GetEntity" />
+  </message>
+  <message name="GetEntitySoapOut">
+    <part name="parameters" element="tns:GetEntityResponse" />
+  </message>
+  <message name="GetEntityCustomFieldListSoapIn">
+    <part name="parameters" element="tns:GetEntityCustomFieldList" />
+  </message>
+  <message name="GetEntityCustomFieldListSoapOut">
+    <part name="parameters" element="tns:GetEntityCustomFieldListResponse" />
+  </message>
+  <message name="GetEntityMetricsSoapIn">
+    <part name="parameters" element="tns:GetEntityMetrics" />
+  </message>
+  <message name="GetEntityMetricsSoapOut">
+    <part name="parameters" element="tns:GetEntityMetricsResponse" />
+  </message>
+  <message name="GetEntityTypeListSoapIn">
+    <part name="parameters" element="tns:GetEntityTypeList" />
+  </message>
+  <message name="GetEntityTypeListSoapOut">
+    <part name="parameters" element="tns:GetEntityTypeListResponse" />
+  </message>
+  <message name="GetRoleTypeListSoapIn">
+    <part name="parameters" element="tns:GetRoleTypeList" />
+  </message>
+  <message name="GetRoleTypeListSoapOut">
+    <part name="parameters" element="tns:GetRoleTypeListResponse" />
+  </message>
+  <message name="GetTimeLogBilledSoapIn">
+    <part name="parameters" element="tns:GetTimeLogBilled" />
+  </message>
+  <message name="GetTimeLogBilledSoapOut">
+    <part name="parameters" element="tns:GetTimeLogBilledResponse" />
+  </message>
+  <message name="GetTimeLogsSoapIn">
+    <part name="parameters" element="tns:GetTimeLogs" />
+  </message>
+  <message name="GetTimeLogsSoapOut">
+    <part name="parameters" element="tns:GetTimeLogsResponse" />
+  </message>
+  <message name="GetToDoListSoapIn">
+    <part name="parameters" element="tns:GetToDoList" />
+  </message>
+  <message name="GetToDoListSoapOut">
+    <part name="parameters" element="tns:GetToDoListResponse" />
+  </message>
+  <message name="GetValidChildTypesSoapIn">
+    <part name="parameters" element="tns:GetValidChildTypes" />
+  </message>
+  <message name="GetValidChildTypesSoapOut">
+    <part name="parameters" element="tns:GetValidChildTypesResponse" />
+  </message>
+  <message name="GoodbyeSoapIn">
+    <part name="parameters" element="tns:Goodbye" />
+  </message>
+  <message name="GoodbyeSoapOut">
+    <part name="parameters" element="tns:GoodbyeResponse" />
+  </message>
+  <message name="HelloSoapIn">
+    <part name="parameters" element="tns:Hello" />
+  </message>
+  <message name="HelloSoapOut">
+    <part name="parameters" element="tns:HelloResponse" />
+  </message>
+  <message name="LoginStandardSoapIn">
+    <part name="parameters" element="tns:LoginStandard" />
+  </message>
+  <message name="LoginStandardSoapOut">
+    <part name="parameters" element="tns:LoginStandardResponse" />
+  </message>
+  <message name="LoginWindowsSoapIn">
+    <part name="parameters" element="tns:LoginWindows" />
+  </message>
+  <message name="LoginWindowsSoapOut">
+    <part name="parameters" element="tns:LoginWindowsResponse" />
+  </message>
+  <message name="SaveTimeLogSoapIn">
+    <part name="parameters" element="tns:SaveTimeLog" />
+  </message>
+  <message name="SaveTimeLogSoapOut">
+    <part name="parameters" element="tns:SaveTimeLogResponse" />
+  </message>
+  <message name="SaveToDoSoapIn">
+    <part name="parameters" element="tns:SaveToDo" />
+  </message>
+  <message name="SaveToDoSoapOut">
+    <part name="parameters" element="tns:SaveToDoResponse" />
+  </message>
+  <message name="SelectToDoSoapIn">
+    <part name="parameters" element="tns:SelectToDo" />
+  </message>
+  <message name="SelectToDoSoapOut">
+    <part name="parameters" element="tns:SelectToDoResponse" />
+  </message>
+  <message name="SetCustomFieldValueSoapIn">
+    <part name="parameters" element="tns:SetCustomFieldValue" />
+  </message>
+  <message name="SetCustomFieldValueSoapOut">
+    <part name="parameters" element="tns:SetCustomFieldValueResponse" />
+  </message>
+  <message name="SetPasswordByUserNameSoapIn">
+    <part name="parameters" element="tns:SetPasswordByUserName" />
+  </message>
+  <message name="SetPasswordByUserNameSoapOut">
+    <part name="parameters" element="tns:SetPasswordByUserNameResponse" />
+  </message>
+  <message name="SetTimeLogBilledSoapIn">
+    <part name="parameters" element="tns:SetTimeLogBilled" />
+  </message>
+  <message name="SetTimeLogBilledSoapOut">
+    <part name="parameters" element="tns:SetTimeLogBilledResponse" />
+  </message>
+  <message name="SetToDoSecsSoapIn">
+    <part name="parameters" element="tns:SetToDoSecs" />
+  </message>
+  <message name="SetToDoSecsSoapOut">
+    <part name="parameters" element="tns:SetToDoSecsResponse" />
+  </message>
+  <message name="TouchSoapIn">
+    <part name="parameters" element="tns:Touch" />
+  </message>
+  <message name="TouchSoapOut">
+    <part name="parameters" element="tns:TouchResponse" />
+  </message>
+  <portType name="XMLSoap">
+    <operation name="AddToDoWorkInProgress">
+      <input message="tns:AddToDoWorkInProgressSoapIn" />
+      <output message="tns:AddToDoWorkInProgressSoapOut" />
+    </operation>
+    <operation name="CopyEntity">
+      <input message="tns:CopyEntitySoapIn" />
+      <output message="tns:CopyEntitySoapOut" />
+    </operation>
+    <operation name="CreateAssignment">
+      <input message="tns:CreateAssignmentSoapIn" />
+      <output message="tns:CreateAssignmentSoapOut" />
+    </operation>
+    <operation name="CreateEntity">
+      <input message="tns:CreateEntitySoapIn" />
+      <output message="tns:CreateEntitySoapOut" />
+    </operation>
+    <operation name="DeleteEntity">
+      <input message="tns:DeleteEntitySoapIn" />
+      <output message="tns:DeleteEntitySoapOut" />
+    </operation>
+    <operation name="DeleteTimeLog">
+      <input message="tns:DeleteTimeLogSoapIn" />
+      <output message="tns:DeleteTimeLogSoapOut" />
+    </operation>
+    <operation name="DeleteTimeLogsForDay">
+      <input message="tns:DeleteTimeLogsForDaySoapIn" />
+      <output message="tns:DeleteTimeLogsForDaySoapOut" />
+    </operation>
+    <operation name="DeleteToDo">
+      <input message="tns:DeleteToDoSoapIn" />
+      <output message="tns:DeleteToDoSoapOut" />
+    </operation>
+    <operation name="FindEntitiesByName">
+      <input message="tns:FindEntitiesByNameSoapIn" />
+      <output message="tns:FindEntitiesByNameSoapOut" />
+    </operation>
+    <operation name="GetAllEntities">
+      <input message="tns:GetAllEntitiesSoapIn" />
+      <output message="tns:GetAllEntitiesSoapOut" />
+    </operation>
+    <operation name="GetCustomFieldValue">
+      <input message="tns:GetCustomFieldValueSoapIn" />
+      <output message="tns:GetCustomFieldValueSoapOut" />
+    </operation>
+    <operation name="GetEntities">
+      <input message="tns:GetEntitiesSoapIn" />
+      <output message="tns:GetEntitiesSoapOut" />
+    </operation>
+    <operation name="GetEntity">
+      <input message="tns:GetEntitySoapIn" />
+      <output message="tns:GetEntitySoapOut" />
+    </operation>
+    <operation name="GetEntityCustomFieldList">
+      <input message="tns:GetEntityCustomFieldListSoapIn" />
+      <output message="tns:GetEntityCustomFieldListSoapOut" />
+    </operation>
+    <operation name="GetEntityMetrics">
+      <input message="tns:GetEntityMetricsSoapIn" />
+      <output message="tns:GetEntityMetricsSoapOut" />
+    </operation>
+    <operation name="GetEntityTypeList">
+      <input message="tns:GetEntityTypeListSoapIn" />
+      <output message="tns:GetEntityTypeListSoapOut" />
+    </operation>
+    <operation name="GetRoleTypeList">
+      <input message="tns:GetRoleTypeListSoapIn" />
+      <output message="tns:GetRoleTypeListSoapOut" />
+    </operation>
+    <operation name="GetTimeLogBilled">
+      <input message="tns:GetTimeLogBilledSoapIn" />
+      <output message="tns:GetTimeLogBilledSoapOut" />
+    </operation>
+    <operation name="GetTimeLogs">
+      <input message="tns:GetTimeLogsSoapIn" />
+      <output message="tns:GetTimeLogsSoapOut" />
+    </operation>
+    <operation name="GetToDoList">
+      <input message="tns:GetToDoListSoapIn" />
+      <output message="tns:GetToDoListSoapOut" />
+    </operation>
+    <operation name="GetValidChildTypes">
+      <input message="tns:GetValidChildTypesSoapIn" />
+      <output message="tns:GetValidChildTypesSoapOut" />
+    </operation>
+    <operation name="Goodbye">
+      <input message="tns:GoodbyeSoapIn" />
+      <output message="tns:GoodbyeSoapOut" />
+    </operation>
+    <operation name="Hello">
+      <input message="tns:HelloSoapIn" />
+      <output message="tns:HelloSoapOut" />
+    </operation>
+    <operation name="LoginStandard">
+      <input message="tns:LoginStandardSoapIn" />
+      <output message="tns:LoginStandardSoapOut" />
+    </operation>
+    <operation name="LoginWindows">
+      <input message="tns:LoginWindowsSoapIn" />
+      <output message="tns:LoginWindowsSoapOut" />
+    </operation>
+    <operation name="SaveTimeLog">
+      <input message="tns:SaveTimeLogSoapIn" />
+      <output message="tns:SaveTimeLogSoapOut" />
+    </operation>
+    <operation name="SaveToDo">
+      <input message="tns:SaveToDoSoapIn" />
+      <output message="tns:SaveToDoSoapOut" />
+    </operation>
+    <operation name="SelectToDo">
+      <input message="tns:SelectToDoSoapIn" />
+      <output message="tns:SelectToDoSoapOut" />
+    </operation>
+    <operation name="SetCustomFieldValue">
+      <input message="tns:SetCustomFieldValueSoapIn" />
+      <output message="tns:SetCustomFieldValueSoapOut" />
+    </operation>
+    <operation name="SetPasswordByUserName">
+      <input message="tns:SetPasswordByUserNameSoapIn" />
+      <output message="tns:SetPasswordByUserNameSoapOut" />
+    </operation>
+    <operation name="SetTimeLogBilled">
+      <input message="tns:SetTimeLogBilledSoapIn" />
+      <output message="tns:SetTimeLogBilledSoapOut" />
+    </operation>
+    <operation name="SetToDoSecs">
+      <input message="tns:SetToDoSecsSoapIn" />
+      <output message="tns:SetToDoSecsSoapOut" />
+    </operation>
+    <operation name="Touch">
+      <input message="tns:TouchSoapIn" />
+      <output message="tns:TouchSoapOut" />
+    </operation>
+  </portType>
+  <binding name="XMLSoap" type="tns:XMLSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="AddToDoWorkInProgress">
+      <soap:operation soapAction="http://www.timetiger.com/AddToDoWorkInProgress" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CopyEntity">
+      <soap:operation soapAction="http://www.timetiger.com/CopyEntity" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CreateAssignment">
+      <soap:operation soapAction="http://www.timetiger.com/CreateAssignment" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CreateEntity">
+      <soap:operation soapAction="http://www.timetiger.com/CreateEntity" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="DeleteEntity">
+      <soap:operation soapAction="http://www.timetiger.com/DeleteEntity" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="DeleteTimeLog">
+      <soap:operation soapAction="http://www.timetiger.com/DeleteTimeLog" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="DeleteTimeLogsForDay">
+      <soap:operation soapAction="http://www.timetiger.com/DeleteTimeLogsForDay" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="DeleteToDo">
+      <soap:operation soapAction="http://www.timetiger.com/DeleteToDo" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="FindEntitiesByName">
+      <soap:operation soapAction="http://www.timetiger.com/FindEntitiesByName" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetAllEntities">
+      <soap:operation soapAction="http://www.timetiger.com/GetAllEntities" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetCustomFieldValue">
+      <soap:operation soapAction="http://www.timetiger.com/GetCustomFieldValue" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetEntities">
+      <soap:operation soapAction="http://www.timetiger.com/GetEntities" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetEntity">
+      <soap:operation soapAction="http://www.timetiger.com/GetEntity" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetEntityCustomFieldList">
+      <soap:operation soapAction="http://www.timetiger.com/GetEntityCustomFieldList" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetEntityMetrics">
+      <soap:operation soapAction="http://www.timetiger.com/GetEntityMetrics" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetEntityTypeList">
+      <soap:operation soapAction="http://www.timetiger.com/GetEntityTypeList" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetRoleTypeList">
+      <soap:operation soapAction="http://www.timetiger.com/GetRoleTypeList" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetTimeLogBilled">
+      <soap:operation soapAction="http://www.timetiger.com/GetTimeLogBilled" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetTimeLogs">
+      <soap:operation soapAction="http://www.timetiger.com/GetTimeLogs" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetToDoList">
+      <soap:operation soapAction="http://www.timetiger.com/GetToDoList" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetValidChildTypes">
+      <soap:operation soapAction="http://www.timetiger.com/GetValidChildTypes" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Goodbye">
+      <soap:operation soapAction="http://www.timetiger.com/Goodbye" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Hello">
+      <soap:operation soapAction="http://www.timetiger.com/Hello" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="LoginStandard">
+      <soap:operation soapAction="http://www.timetiger.com/LoginStandard" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="LoginWindows">
+      <soap:operation soapAction="http://www.timetiger.com/LoginWindows" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="SaveTimeLog">
+      <soap:operation soapAction="http://www.timetiger.com/SaveTimeLog" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="SaveToDo">
+      <soap:operation soapAction="http://www.timetiger.com/SaveToDo" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="SelectToDo">
+      <soap:operation soapAction="http://www.timetiger.com/SelectToDo" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="SetCustomFieldValue">
+      <soap:operation soapAction="http://www.timetiger.com/SetCustomFieldValue" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="SetPasswordByUserName">
+      <soap:operation soapAction="http://www.timetiger.com/SetPasswordByUserName" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="SetTimeLogBilled">
+      <soap:operation soapAction="http://www.timetiger.com/SetTimeLogBilled" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="SetToDoSecs">
+      <soap:operation soapAction="http://www.timetiger.com/SetToDoSecs" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Touch">
+      <soap:operation soapAction="http://www.timetiger.com/Touch" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ttsystem">
+    <documentation>API Version 1.0.0</documentation>
+    <port name="XMLSoap" binding="tns:XMLSoap">
+      <soap:address location="https://www.timetiger.com/online/sample/ttxml" />
+    </port>
+  </service>
+</definitions>
